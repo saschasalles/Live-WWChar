@@ -28,7 +28,7 @@ struct ContentView: View {
                 Section {
                     ForEach(chars) { char in
                         NavigationLink(
-                            destination: EditView(),
+                            destination: EditView(charVM: charVM),
                             label: {
                                 ListItem(char: char)
                             })
