@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListItem: View {
-    var char: Character
+    @ObservedObject var char: Character
     var placeholder: String = "unknown"
     var body: some View {
         HStack {

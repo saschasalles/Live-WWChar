@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditView: View {
+    var char: Character
     @ObservedObject var charVM: CharacterViewModel
     @Environment(\.managedObjectContext) var context
     @Environment(\.presentationMode) var presentation
@@ -38,16 +39,17 @@ struct EditView: View {
                     Text("\(self.charVM.age) ans")
                 }
             }
-//                Section(header: Text("Maison actuelle \(charToEdit.house.name)")) {
-//                    Picker(selection: self.$charVM.houseSelection, label: Text("Choisir la maison")) {
-//                        ForEach(0 ..< houses.count) {
-//                            Text(houses[$0].name ?? "unknown")
-//                        }
-//                    }
-//                }
 
+            Section(header: Text("Maison actuelle \(char.house?.name ?? "unknown")")) {
+                Picker(selection: self.$charVM.houseSelection, label: Text("Choisir la maison")) {
+                    ForEach(0 ..< houses.count) {
+                        Text(houses[$0].name ?? "unknown")
+                    }
+                }
+            }
 
             Button(action: {
+                self.charVM.updateChar(context: context)
                 self.presentation.wrappedValue.dismiss()
             }) {
                 Text("Modifier le personnage")
@@ -56,6 +58,12 @@ struct EditView: View {
 
 
         }.navigationBarTitle(Text("Editer"))
+            .onAppear(perform: {
+            DispatchQueue.main.async {
+                self.charVM.setUpdate(char: char)
+            }
+        }
+        )
 
     }
 }

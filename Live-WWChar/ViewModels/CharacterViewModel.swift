@@ -14,12 +14,14 @@ class CharacterViewModel: ObservableObject {
     @Published var age: Int = 0
     @Published var isAddPresented: Bool = false
     @Published var houseSelection: Int = 0
+    @Published var characterToEdit: Character!
+    
+    fileprivate let houseReq = NSFetchRequest<House>(entityName: "House")
     
     
     func addChar(context: NSManagedObjectContext) -> Void {
         // requête pour recuperer les houses
-        let req = NSFetchRequest<House>(entityName: "House")
-        req.sortDescriptors = [NSSortDescriptor(keyPath: \House.name?, ascending: true)]
+        self.houseReq.sortDescriptors = [NSSortDescriptor(keyPath: \House.name?, ascending: true)]
         
         // fait mon personnage
         let newChar = Character(context: context)
@@ -30,7 +32,7 @@ class CharacterViewModel: ObservableObject {
         
         do {
             // je recupere toute les maisons
-            let fetchedHouses = try context.fetch(req)
+            let fetchedHouses = try context.fetch(self.houseReq)
             
             // je recupere la maison avec l'index que j'ai selectionné
             let charHouse = fetchedHouses[houseSelection]
@@ -60,6 +62,32 @@ class CharacterViewModel: ObservableObject {
         }
     }
     
+    func setUpdate(char: Character) -> Void {
+        self.characterToEdit = char
+        self.firstName = char.firstName ?? "unknown"
+        self.lastName = char.lastName ?? "unknown"
+        self.age = Int(char.age)
+        
+    }
+    
+    func updateChar(context: NSManagedObjectContext) -> Void {
+        let char = context.object(with: self.characterToEdit.objectID)
+        char.setValue(self.firstName, forKey: "firstName")
+        char.setValue(self.lastName, forKey: "lastName")
+        char.setValue(Int64(self.age), forKey: "age")
+        
+        do {
+            houseReq.sortDescriptors = [NSSortDescriptor(keyPath: \House.name?, ascending: true)]
+            let fetchedHouses = try context.fetch(houseReq)
+            let newHouse = fetchedHouses[houseSelection]
+            char.setValue(newHouse, forKey: "house")
+            
+            try context.save()
+            self.resetValues()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     func resetValues() -> Void {
         self.firstName = ""

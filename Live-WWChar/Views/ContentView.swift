@@ -28,7 +28,7 @@ struct ContentView: View {
                 Section {
                     ForEach(chars) { char in
                         NavigationLink(
-                            destination: EditView(charVM: charVM),
+                            destination: EditView(char: char, charVM: charVM),
                             label: {
                                 ListItem(char: char)
                             })
@@ -49,8 +49,10 @@ struct ContentView: View {
             }
             .navigationBarTitle("Wizarding World")
         }.onAppear(perform: {
-            if self.houses.count < 4 {
-                self.houseVM.addDefaultHouses(context: context)
+            DispatchQueue.main.async {
+                if self.houses.count < 4 {
+                    self.houseVM.addDefaultHouses(context: context)
+                }
             }
         })
         
