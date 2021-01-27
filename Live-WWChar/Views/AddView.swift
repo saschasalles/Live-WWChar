@@ -10,7 +10,16 @@ import SwiftUI
 struct AddView: View {
     @ObservedObject var charVM: CharacterViewModel
     @Environment(\.managedObjectContext) var context
+    @FetchRequest(entity: House.entity(),
+                  sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)])
+    var houses: FetchedResults<House>
+    
     let range = 1...665 // MARK : plage d'age autorisee
+    
+    func verify() -> Bool {
+        let result = (!self.charVM.firstName.isEmpty && !self.charVM.lastName.isEmpty == true) ? true : false
+        return result
+    }
     
     var body: some View {
         NavigationView {
@@ -27,20 +36,20 @@ struct AddView: View {
                         Text("Actuel : \(self.charVM.age)")
                     }
                 }
-//                Section(header: Text("Maison")) {
-//                    Picker(selection: $selectedHouse, label: Text("Choisir la maison")) {
-//                        ForEach(0 ..< houses.count) {
-//                            Text(houses[$0].name)
-//                        }
-//                    }
-//                }
+                Section(header: Text("Maison")) {
+                    Picker(selection: self.$charVM.houseSelection, label: Text("Choisir la maison")) {
+                        ForEach(0 ..< houses.count) {
+                            Text(houses[$0].name ?? "unknown")
+                        }
+                    }
+                }
 
                 Button(action: {
-                    print("toto")
+                    self.charVM.addChar(context: context)
                 }) {
                     Text("Ajouter le personnage")
                         .frame(maxWidth: .infinity, alignment: .center)
-                }
+                }.disabled(!self.verify())
             }
             .navigationBarTitle("Ajouter")
         }

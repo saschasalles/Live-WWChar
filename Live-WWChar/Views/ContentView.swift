@@ -18,31 +18,28 @@ struct ContentView: View {
                   sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)])
     var houses: FetchedResults<House>
     
+    @FetchRequest(entity: Character.entity(),
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Character.house?.name, ascending: true)])
+    var chars: FetchedResults<Character>
     
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    ForEach(houses) { house in
-                        Text(house.name ?? "unkwn" )
+                    ForEach(chars) { char in
+                        NavigationLink(
+                            destination: EditView(),
+                            label: {
+                                ListItem(char: char)
+                            })
                     }
-                    
-//                    ForEach(chars.characters) { char in
-//                        NavigationLink(
-//                            destination: EditView(charToEdit: char),
-//                            label: {
-//                                ListItem(char: char)
-//                            })
-//                    }.onDelete(perform: chars.delete)
                 }
             }
                 .listStyle(InsetGroupedListStyle())
                 .navigationBarItems(trailing:
                 Button(action: { self.charVM.isAddPresented.toggle() }) {
-                HStack {
                     Image(systemName: "plus")
                         .font(.title)
-                }
             }
             )
             .sheet(isPresented: self.$charVM.isAddPresented) {
