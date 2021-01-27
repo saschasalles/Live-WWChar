@@ -32,7 +32,9 @@ struct ContentView: View {
                             label: {
                                 ListItem(char: char)
                             })
-                    }
+                    }.onDelete(perform: { indexSet in
+                        self.charVM.deleteChar(context: context, char: chars[indexSet.first!])
+                    })
                 }
             }
                 .listStyle(InsetGroupedListStyle())

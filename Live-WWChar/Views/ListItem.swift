@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListItem: View {
     var char: Character
-    private var placeholder: String = "unknown"
+    var placeholder: String = "unknown"
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -18,7 +18,7 @@ struct ListItem: View {
                 Text("\(self.char.age) ans")
             }
             Spacer()
-//            Pill(text: self.char.house.name, color: self.char.house.mainColor)
+            Pill(text: self.char.house?.name ?? placeholder)
         }
         .padding(.vertical, 10)
     }

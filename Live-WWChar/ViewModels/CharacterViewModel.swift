@@ -49,6 +49,18 @@ class CharacterViewModel: ObservableObject {
         }
     }
     
+    func deleteChar(context: NSManagedObjectContext, char: NSManagedObject) -> Void {
+        //je supprime l'object du context
+        context.delete(char)
+        do {
+            // je sauvegarde l'etat du context
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
     func resetValues() -> Void {
         self.firstName = ""
         self.lastName = ""
