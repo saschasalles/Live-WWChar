@@ -13,6 +13,16 @@
 		2BDB212025C1602500111FCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDB211F25C1602500111FCF /* Preview Assets.xcassets */; };
 		2BDB212225C1602500111FCF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB212125C1602500111FCF /* Persistence.swift */; };
 		2BDB212525C1602500111FCF /* Live_WWChar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB212325C1602500111FCF /* Live_WWChar.xcdatamodeld */; };
+		2BDB213525C16D8800111FCF /* Character+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213125C16D8800111FCF /* Character+CoreDataClass.swift */; };
+		2BDB213625C16D8800111FCF /* Character+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213225C16D8800111FCF /* Character+CoreDataProperties.swift */; };
+		2BDB213725C16D8800111FCF /* House+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213325C16D8800111FCF /* House+CoreDataClass.swift */; };
+		2BDB213825C16D8800111FCF /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213425C16D8800111FCF /* House+CoreDataProperties.swift */; };
+		2BDB213B25C1730B00111FCF /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213A25C1730B00111FCF /* CharacterViewModel.swift */; };
+		2BDB213E25C1731B00111FCF /* HouseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB213D25C1731B00111FCF /* HouseViewModel.swift */; };
+		2BDB214125C174D100111FCF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB214025C174D100111FCF /* EditView.swift */; };
+		2BDB214425C174DB00111FCF /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB214325C174DB00111FCF /* AddView.swift */; };
+		2BDB214725C174FC00111FCF /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB214625C174FC00111FCF /* Pill.swift */; };
+		2BDB214A25C1750800111FCF /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB214925C1750800111FCF /* ListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		2BDB212125C1602500111FCF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2BDB212425C1602500111FCF /* Live_WWChar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Live_WWChar.xcdatamodel; sourceTree = "<group>"; };
 		2BDB212625C1602500111FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BDB213125C16D8800111FCF /* Character+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Character+CoreDataClass.swift"; path = "Live-WWChar/Character+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2BDB213225C16D8800111FCF /* Character+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Character+CoreDataProperties.swift"; path = "Live-WWChar/Character+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BDB213325C16D8800111FCF /* House+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "House+CoreDataClass.swift"; path = "Live-WWChar/House+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2BDB213425C16D8800111FCF /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "House+CoreDataProperties.swift"; path = "Live-WWChar/House+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BDB213A25C1730B00111FCF /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		2BDB213D25C1731B00111FCF /* HouseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewModel.swift; sourceTree = "<group>"; };
+		2BDB214025C174D100111FCF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		2BDB214325C174DB00111FCF /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		2BDB214625C174FC00111FCF /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		2BDB214925C1750800111FCF /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +60,10 @@
 		2BDB210C25C1602400111FCF = {
 			isa = PBXGroup;
 			children = (
+				2BDB213125C16D8800111FCF /* Character+CoreDataClass.swift */,
+				2BDB213225C16D8800111FCF /* Character+CoreDataProperties.swift */,
+				2BDB213325C16D8800111FCF /* House+CoreDataClass.swift */,
+				2BDB213425C16D8800111FCF /* House+CoreDataProperties.swift */,
 				2BDB211725C1602400111FCF /* Live-WWChar */,
 				2BDB211625C1602400111FCF /* Products */,
 			);
@@ -57,7 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				2BDB211825C1602400111FCF /* Live_WWCharApp.swift */,
-				2BDB211A25C1602400111FCF /* ContentView.swift */,
+				2BDB212E25C1636100111FCF /* ViewModels */,
+				2BDB212D25C1633B00111FCF /* Views */,
 				2BDB211C25C1602500111FCF /* Assets.xcassets */,
 				2BDB212125C1602500111FCF /* Persistence.swift */,
 				2BDB212625C1602500111FCF /* Info.plist */,
@@ -73,6 +98,27 @@
 				2BDB211F25C1602500111FCF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2BDB212D25C1633B00111FCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BDB211A25C1602400111FCF /* ContentView.swift */,
+				2BDB214325C174DB00111FCF /* AddView.swift */,
+				2BDB214625C174FC00111FCF /* Pill.swift */,
+				2BDB214925C1750800111FCF /* ListItem.swift */,
+				2BDB214025C174D100111FCF /* EditView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BDB212E25C1636100111FCF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2BDB213A25C1730B00111FCF /* CharacterViewModel.swift */,
+				2BDB213D25C1731B00111FCF /* HouseViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +190,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDB213825C16D8800111FCF /* House+CoreDataProperties.swift in Sources */,
+				2BDB213B25C1730B00111FCF /* CharacterViewModel.swift in Sources */,
+				2BDB214125C174D100111FCF /* EditView.swift in Sources */,
 				2BDB212225C1602500111FCF /* Persistence.swift in Sources */,
 				2BDB211B25C1602400111FCF /* ContentView.swift in Sources */,
+				2BDB213725C16D8800111FCF /* House+CoreDataClass.swift in Sources */,
 				2BDB211925C1602400111FCF /* Live_WWCharApp.swift in Sources */,
+				2BDB214725C174FC00111FCF /* Pill.swift in Sources */,
+				2BDB214A25C1750800111FCF /* ListItem.swift in Sources */,
 				2BDB212525C1602500111FCF /* Live_WWChar.xcdatamodeld in Sources */,
+				2BDB214425C174DB00111FCF /* AddView.swift in Sources */,
+				2BDB213525C16D8800111FCF /* Character+CoreDataClass.swift in Sources */,
+				2BDB213625C16D8800111FCF /* Character+CoreDataProperties.swift in Sources */,
+				2BDB213E25C1731B00111FCF /* HouseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
