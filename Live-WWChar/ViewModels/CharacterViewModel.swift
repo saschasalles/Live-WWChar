@@ -18,7 +18,6 @@ class CharacterViewModel: ObservableObject {
     
     fileprivate let houseReq = NSFetchRequest<House>(entityName: "House")
     
-    
     func addChar(context: NSManagedObjectContext) -> Void {
         // requête pour recuperer les houses
         self.houseReq.sortDescriptors = [NSSortDescriptor(keyPath: \House.name?, ascending: true)]
