@@ -16,7 +16,7 @@ class HouseViewModel: ObservableObject {
         gryffondor.name = "Gryffondor"
         gryffondor.id = UUID()
         let serpentar = House(context: context)
-        serpentar.name = "Serpentar"
+        serpentar.name = "Serpentard"
         serpentar.id = UUID()
         let serdaigle = House(context: context)
         serdaigle.name = "Serdaigle"
