@@ -1,2 +1,3 @@
 # Live-WWChar
-An MVVM implementation of CoreData with Relationship and SwiftUI for Apple Lab Students
+> An `MVVM` implementation of a `CoreData` `CRUD` with relationships for Apple Lab Students.
+Integration with `SwiftUI`.
